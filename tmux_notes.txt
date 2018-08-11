@@ -1,0 +1,53 @@
+##install
+#mac
+brew install tmux
+
+##man page
+man tmux
+
+##shortcuts##
+ctrl+b  : activate console ,back to shell -> tmux a -t session_name :re-enter session
+ctrl+b , then input following key  , check man page
+& :close all current small windows, alert/confirm
+o :switch window
+t :show time at the cursor location
+! :fullscreen for current window
+q :check window number
+s :swith to other session
+% : split current pane to left/right
+" : split current pane to top/down
+<direction_key> :switch window/pane
+ctrl+d :close current window
+
+tmux -V  #version
+
+###install###
+brew install tmux #for mac Homebrew
+
+###start tmux###
+tmux #open
+exit #close
+
+###tmux sessions###
+tmux new-session -s basic  #create a named session 'basic'
+tmux new -s basic        #create a named session 'basic'
+tmux new -s second -d #create a second session in background
+CTRL-b + d  #detach tmux session ,still running in background , sesison still there even close terminal 
+tmux list-sessions   #list existing sessions
+tmux ls  #list existing sessions
+tmux attach #attach session , if only 1 session
+tmux attach -t second   #attach to second session , use -t
+#kill sessions
+tmux kill-session -t basic
+tmux kill-sessoin -t second  #if all session killed ->tmux server connection refused
+
+###tmux windows###
+tmux new -s windows -n shell  #-n <windows_name>
+tmux new-window -n <window_name> #create a new window
+CTRL-B + n #switch to next window
+CTRL-B + p #switch to previous window
+CTRL-B + 0 #switch to first window
+CTRL-B + 1 #switch to second window
+CTRL-B + f #find window by name
+CTRL-B + & #close/kill a window ,with confirm
+
