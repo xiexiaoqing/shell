@@ -7,3 +7,10 @@ compgen -A function # will list all functions you could run
 compgen -A function -abck # will list all the above in one go 
 
 
+###print all commands included in $PATH ###
+printf '%s\n' ${PATH//:/\/* }
+
+### search info in linux man pages###
+man -k <keyword>
+e.g. man -k sendmail
+     man -k vim
